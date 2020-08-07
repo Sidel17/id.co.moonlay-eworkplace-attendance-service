@@ -12,9 +12,10 @@ using System;
 namespace EWorkplaceAbsensiService.WebApi.Migrations
 {
     [DbContext(typeof(AbsensiDbContext))]
-    partial class AbsensiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200807090426_EmployeeProfile")]
+    partial class EmployeeProfile
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

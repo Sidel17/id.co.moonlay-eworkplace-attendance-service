@@ -5,6 +5,8 @@ using EWorkplaceAbsensiService.Lib.Helpers.ValidateService;
 using EWorkplaceAbsensiService.Lib.Services.Absensis;
 using EWorkplaceAbsensiService.Lib.Services.Activities;
 using EWorkplaceAbsensiService.Lib.Services.ActivityCategories;
+using EWorkplaceAbsensiService.Lib.Services.Employee;
+using EWorkplaceAbsensiService.Lib.Services.Employee.Asset;
 using EWorkplaceAbsensiService.Lib.Services.Projects;
 using EWorkplaceAbsensiService.Lib.Services.Reports;
 using EWorkplaceAbsensiService.Lib.Services.TaskManagement;
@@ -44,6 +46,9 @@ namespace EWorkplaceAbsensiService.WebApi
             services
                 .AddScoped<IIdentityService, IdentityService>()
                 .AddScoped<IValidateService, ValidateService>();
+
+            services.AddTransient<IRepository<Lib.Models.Employee.Asset>, Repository<Lib.Models.Employee.Asset>>();
+            services.AddTransient<IAssetService, AssetService>();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
